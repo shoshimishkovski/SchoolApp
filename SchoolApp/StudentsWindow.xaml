@@ -29,8 +29,19 @@
                 <ComboBox Margin="20" FontSize="20" Width="100" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></ComboBox>
             </WrapPanel>
         </Grid>
-        <DataGrid Grid.Row="2" Grid.Column="1"  ItemsSource="{Binding Students}">
+        <DataGrid Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Students}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Home Phone" Binding="{Binding HomePhone}" />
+                <DataGridTextColumn Header="Birthday Year" Binding="{Binding BirthdayYear}" />
+                <DataGridTextColumn Header="Class" Binding="{Binding Class}" />
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
-    </DataGrid>
+
     </Grid>
 </Window>
+

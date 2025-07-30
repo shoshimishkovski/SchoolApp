@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,14 @@ namespace SchoolApp
     {
         public TeachersWindow()
         {
-            DataContext = this;
+            //DataContext = this;
             //bl = new bl;
             //Teachers = bl.GetTeachers();
             InitializeComponent();
+            DataContext = new
+            {
+                Teachers = fun.GetTeachers()
+            };
         }
         //public List<Teacher> Teachers { get; set; }
     }

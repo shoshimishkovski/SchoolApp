@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,7 +23,11 @@ namespace SchoolApp
     {
         public StudentsWindow()
         {
-            DataContext = this;
+            //DataContext = this;
+            DataContext = new
+            {
+                Students = fun.GetStudents()
+            };
             //bl = new bl;
             //Students = bl.GetStudents();
             InitializeComponent();
